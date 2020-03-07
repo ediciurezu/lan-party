@@ -1,6 +1,6 @@
 # Lan Party
 ## Solution Description
-The first step is to read the files and create a simple linked list through
+The first step is to read the files and create a singly linked list through
 adding each team to the top of the list. We make the list to behave like a
 circular one, at each step we look for the minimum number of points in the list
 and eliminate the team which score is equal to the minimum. We continue the
