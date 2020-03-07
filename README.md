@@ -29,84 +29,118 @@ structure.
 ## Explanation of functions
 ### utility.h
 * `void freeTeam(Team *team)`
-Receives as a parameter a pointer to a team and releases the memory used for
+receive as a parameter a pointer to a team and releases the memory used for
 the players and the respective team
 
 * `void AddPoints(Team **team)`
-Add players from a team one more point in the xp field
+add players from a team one more point in the xp field
 
 * `float Points(Team *Team)`
-Returns the score of a team sent as a parameter
+return the score of a team sent as a parameter
 
 * `void TestAlloc(void *p)`
-Check if memory is correctly allocated to a pointer
+check if memory is correctly allocated to a pointer
 
 * `void CreateTeamList(Team **head, int *numTeam, char *filename)`
-Read from the file "filename" a given number of teams, allocate memory and add
+read from the file "filename" a given number of teams, allocate memory and add
 at the beginning of a singly linked list
 
 * `int MaxPower(int numTeams)`
-Returns the max power of 2 less than a given number. Starts shifting the bits
-to the left until the number exceeds the given value and returns the
+return the max power of 2 less than a given number. Start shifting the bits
+to the left until the number exceeds the given value and return the
 immediately preceding value
 
 * `float MinPoints(Team *head)`
-Receives as parameter the head of a singly linked list and returns the minimum
+receive as parameter the head of a singly linked list and return the minimum
 score of the teams in it
 
 * `void DeleteTeam(Team **head, Team *p)`
-Remove a team from a singly linked list by its address
+remove a team from a singly linked list by its address
 
 * `void KillLowTeams(Team **head, int *numTeams)`
-Calculate at each step the minimum of the scores from a singly linked list and
+calculate at each step the minimum of the scores from a singly linked list and
 eliminate the teams until the highest power of 2 is reached. The list behaves
 like a circular list and elimination it is done by first checking the head,
 then continuing from the last eliminated minimum.
 
 * `void DisplayTeam(Team *head, FILE *file)`
-Displays the names of the teams from a singly linked list in a given file
+display the names of the teams from a singly linked list in a given file
 
 * `void Requests(int *req, char *filename)`
-Encodes the requirements from the given file into a vector
+encode the requirements from the given file into a vector
 
 * `void DeleteList(Team **head)`
-Frees the memory from the singly linked list
+free the memory from the singly linked list
 
 ### queuestack.h
-* void push(Stack **top, Team *Team)
-Add a team to the stack
+* `void push(Stack **top, Team *Team)`
+add a team to the stack
 
-* int isStackEmpty(Stack *top)
-Returns 1 if the stack is empty and 0 if it is not
+* `int isStackEmpty(Stack *top)`
+return 1 if the stack is empty and 0 if it is not
 
-* Team* pop(Stack **top)
-Remove a team from the stack and return it
+* `Team* pop(Stack **top)`
+remove a team from the stack and return it
 
-* Queue* createQueue()
-Create the queue
+* `Queue* createQueue()`
+create the queue
 
-* void enQueue(Queue *q, Game *Game)
-Add a game to the queue
+* `void enQueue(Queue *q, Game *Game)`
+add a game to the queue
 
-* int isQueueEmpty(Queue *q)
-Returns 1 if the queue is empty and 0 if it is not
+* `int isQueueEmpty(Queue *q)`
+return 1 if the queue is empty and 0 if it is not
 
-* Game* deQueue(Queue *q) 
-Remove a game from the queue and return it
+* `Game* deQueue(Queue *q)`
+remove a game from the queue and return it
 
-* Team* Winner(Game *Game)
-Return the winning team from a game (depending on the score)
+* `Team* Winner(Game *Game)`
+return the winning team from a game (depending on the score)
 
-* int countStack(Stack *top)
-Returns the size of the stack
+* `int countStack(Stack *top)`
+return the size of the stack
 
-* void DisplayQueue(Queue *q, Stack **topWin, Stack **topLose, FILE *file)
-Display the queue games in a file and add the winning teams in a stack,
+* `void DisplayQueue(Queue *q, Stack **topWin, Stack **topLose, FILE *file)`
+display the queue games in a file and add the winning teams in a stack,
 respectively the losing teams in another stack received as parameters
 
-* void DeleteStack(Stack **top)
-Frees the memory of the stack
+* `void DeleteStack(Stack **top)`
+frees the memory of the stack
 
-* void DisplayStack(Stack **top, Queue *q, FILE *file)
-Display in a file the name and score of the teams in a stack and add them in a
+* `void DisplayStack(Stack **top, Queue *q, FILE *file)`
+display in a file the name and score of the teams in a stack and add them in a
 queue
+
+### bst.h
+* `BSTNode* createNode(Team *value)`
+create a node in BST with a pointer to a team sent as a parameter
+
+* `BSTNode* insertNode(BSTNode *root, Team *data)`
+ddd in the BST a node with a pointer to a team
+
+* `void inOrder(BSTNode *root, FILE *file)`
+display in a file the BST traversal inorder (Right-Root-Left)
+
+### avl.h
+
+* `int max(int a, int b)`
+return the maximum between two integers
+
+* `AVLNode* createAVLNode(Team *team)`
+create a node in AVL with a pointer to a team sent as a parameter
+
+* `AVLNode* rightRotate(AVLNode *y)`
+make the right rotation in a node
+
+* `AVLNode* leftRotate(AVLNode *x)`
+make the left rotation in a node
+
+* `int getBalance(AVLNode *node)`
+return the difference between the height of the left subtree and the height of
+the right subtree
+
+* `AVLNode *insertAVLNode(AVLNode *root, Team *team)`
+add in AVL a node with a pointer to a team
+
+* `void printGivenLevel(AVLNode *root, int level, FILE *file)`
+display in a file the nodes on a lovel of an AVL
