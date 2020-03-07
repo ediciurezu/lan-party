@@ -28,5 +28,47 @@ structure.
 
 ## Explanation of functions
 ### utility.h
-*`c if (a == b) return a`
+* `void freeTeam(Team *team)`
+Receives as a parameter a pointer to a team and releases the memory used for
+the players and the respective team
+
+* `void AddPoints(Team **team)`
+Add players from a team one more point in the xp field
+
+* `float Points(Team *Team)`
+Returns the score of a team sent as a parameter
+
+* `void TestAlloc(void *p)`
+Check if memory is correctly allocated to a pointer
+
+* `void CreateTeamList(Team **head, int *numTeam, char *filename)`
+Read from the file "filename" a given number of teams, allocate memory and add
+at the beginning of a singly linked list
+
+* `int MaxPower(int numTeams)`
+Returns the max power of 2 less than a given number. Starts shifting the bits
+to the left until the number exceeds the given value and returns the
+immediately preceding value
+
+* `float MinPoints(Team *head)`
+Receives as parameter the head of a singly linked list and returns the minimum
+score of the teams in it
+
+* `void DeleteTeam(Team **head, Team *p)`
+Remove a team from a singly linked list by its address
+
+* `void KillLowTeams(Team **head, int *numTeams)`
+Calculate at each step the minimum of the scores from a singly linked list and
+eliminate the teams until the highest power of 2 is reached. The list behaves
+like a circular list and elimination it is done by first checking the head,
+then continuing from the last eliminated minimum.
+
+* `void DisplayTeam(Team *head, FILE *file)`
+Displays the names of the teams from a singly linked list in a given file
+
+* `void Requests(int *req, char *filename)`
+Encodes the requirements from the given file into a vector
+
+* `void DeleteList(Team **head)`
+Frees the memory from the singly linked list
 
