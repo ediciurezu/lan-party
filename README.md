@@ -72,3 +72,41 @@ Encodes the requirements from the given file into a vector
 * `void DeleteList(Team **head)`
 Frees the memory from the singly linked list
 
+### queuestack.h
+* void push(Stack **top, Team *Team)
+Add a team to the stack
+
+* int isStackEmpty(Stack *top)
+Returns 1 if the stack is empty and 0 if it is not
+
+* Team* pop(Stack **top)
+Remove a team from the stack and return it
+
+* Queue* createQueue()
+Create the queue
+
+* void enQueue(Queue *q, Game *Game)
+Add a game to the queue
+
+* int isQueueEmpty(Queue *q)
+Returns 1 if the queue is empty and 0 if it is not
+
+* Game* deQueue(Queue *q) 
+Remove a game from the queue and return it
+
+* Team* Winner(Game *Game)
+Return the winning team from a game (depending on the score)
+
+* int countStack(Stack *top)
+Returns the size of the stack
+
+* void DisplayQueue(Queue *q, Stack **topWin, Stack **topLose, FILE *file)
+Display the queue games in a file and add the winning teams in a stack,
+respectively the losing teams in another stack received as parameters
+
+* void DeleteStack(Stack **top)
+Frees the memory of the stack
+
+* void DisplayStack(Stack **top, Queue *q, FILE *file)
+Display in a file the name and score of the teams in a stack and add them in a
+queue
