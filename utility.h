@@ -1,3 +1,6 @@
+#ifndef UTILITY_H
+#define UTILITY_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -43,3 +46,5 @@ void DisplayTeam(Team *head, FILE *file);
 void Requests(int *req, char *filename);
 
 void DeleteList(Team **head);
+
+#endif
