@@ -28,5 +28,5 @@ structure.
 
 ## Explanation of functions
 ### utility.h
-
+*'c if (a == b) return a'
 
